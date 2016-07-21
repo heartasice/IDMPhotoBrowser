@@ -1,18 +1,20 @@
 PODS:
   - DACircularProgress (2.3.1)
   - pop (1.0.9)
-  - SDWebImage (3.7.5):
-    - SDWebImage/Core (= 3.7.5)
-  - SDWebImage/Core (3.7.5)
+  - YYKit (1.0.7):
+    - YYKit/no-arc (= 1.0.7)
+  - YYKit/no-arc (1.0.7)
 
 DEPENDENCIES:
   - DACircularProgress
   - pop
-  - SDWebImage
+  - YYKit
 
 SPEC CHECKSUMS:
   DACircularProgress: 4dd437c0fc3da5161cb289e07ac449493d41db71
   pop: f667631a5108a2e60d9e8797c9b32ddaf2080bce
-  SDWebImage: 69c6303e3348fba97e03f65d65d4fbc26740f461
+  YYKit: 843d1b26e20b82c695790c9a89907eaa1e99907f
 
-COCOAPODS: 0.39.0
+PODFILE CHECKSUM: dc336706ad83634ae5dacc1142cc030758cb0208
+
+COCOAPODS: 1.0.1

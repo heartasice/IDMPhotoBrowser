@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import "IDMPhotoProtocol.h"
-#import <SDWebImage/SDWebImageManager.h>
+#import "YYWebImageManager.h"
 
 // This class models a photo/image and it's caption
 // If you want to handle photos, caching, decompression

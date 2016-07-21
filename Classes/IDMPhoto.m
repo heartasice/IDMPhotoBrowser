@@ -136,18 +136,19 @@ caption = _caption;
             [self performSelectorInBackground:@selector(loadImageFromFileAsync) withObject:nil];
         } else if (_photoURL) {
             // Load async from web (using SDWebImageManager)
-            SDWebImageManager *manager = [SDWebImageManager sharedManager];
-            [manager downloadImageWithURL:_photoURL options:SDWebImageRetryFailed progress:^(NSInteger receivedSize, NSInteger expectedSize) {
+            YYWebImageManager *manager=[YYWebImageManager sharedManager];
+            [manager requestImageWithURL:_photoURL options:YYWebImageOptionRefreshImageCache progress:^(NSInteger receivedSize,NSInteger expectedSize){
                 CGFloat progress = ((CGFloat)receivedSize)/((CGFloat)expectedSize);
                 if (self.progressUpdateBlock) {
                     self.progressUpdateBlock(progress);
                 }
-            } completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, BOOL finished, NSURL *imageURL) {
-                if (image) {
-                    self.underlyingImage = image;
-                    [self performSelectorOnMainThread:@selector(imageLoadingComplete) withObject:nil waitUntilDone:NO];
-                }
+            } transform:^UIImage*(UIImage *image,NSURL *url){
+                return image;
+            } completion:^(UIImage *image,NSURL *url,YYWebImageFromType fromType,YYWebImageStage imageStage,NSError *error){
+                self.underlyingImage = image;
+                [self performSelectorOnMainThread:@selector(imageLoadingComplete) withObject:nil waitUntilDone:NO];
             }];
+
 
         } else {
             // Failed - no source
