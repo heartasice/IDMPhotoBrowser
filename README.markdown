@@ -1,12 +1,13 @@
 # IDMPhotoBrowser ![](http://cocoapod-badges.herokuapp.com/v/IDMPhotoBrowser/badge.png) ![](http://cocoapod-badges.herokuapp.com/p/IDMPhotoBrowser/badge.png)
 
-IDMPhotoBrowser is a new implementation based on [MWPhotoBrowser](https://github.com/mwaterfall/MWPhotoBrowser).
+IDMPhotoBrowser With YYKit is a new implementation based on [MWPhotoBrowser](https://github.com/mwaterfall/MWPhotoBrowser).
 
+Just Removed SDWebImageManger to YYKit
 We've added both user experience and technical features inspired by Facebook's and Tweetbot's photo browsers.
 
 ## New features:
 - Uses ARC
-- Uses SDWebImage for image loading
+- Uses YYKit for image loading
 - Image progress shown
 - Minimalistic Facebook-like interface, swipe up/down to dismiss
 - Ability to add custom actions on the action sheet
